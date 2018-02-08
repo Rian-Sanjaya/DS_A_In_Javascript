@@ -46,6 +46,25 @@ function Stack() {
 
 		return binString;
 	}
+
+	this.baseConverter = function(decNumber, base) {
+		var remStack = new Stack(),
+			rem,
+			baseString = '',
+			digits = '0123456789ABCDEF';
+
+		while (decNumber > 0) {
+			rem = Math.floor(decNumber % base);
+			remStack.push(rem);
+			decNumber = Math.floor(decNumber / base);
+		}
+
+		while (!remStack.isEmpty()) {
+			baseString += digits[remStack.pop()];
+		}
+
+		return baseString;
+	}
 }
 
 
@@ -62,3 +81,5 @@ stack.pop();
 stack.pop();
 stack.size();
 stack.print();
+console.log(stack.decimalToBinary(10));
+console.log(stack.baseConverter(10, 2));
