@@ -26,7 +26,7 @@ function Stack() {
 	};
 
 	this.print = function() {
-		return console.log(items.toString());
+		console.log(items.toString());
 	};
 
 	this.decimalToBinary = function(decNumber) {
