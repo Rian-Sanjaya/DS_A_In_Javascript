@@ -25,3 +25,14 @@ function Queue() {
 		console.log(items.toString());
 	}
 }
+
+let queue = new Queue();
+queue.isEmpty();
+queue.enqueue("John");
+queue.enqueue("Jack");
+queue.enqueue("Camila");
+queue.print();
+queue.size();
+queue.dequeue();
+queue.dequeue();
+queue.print();
