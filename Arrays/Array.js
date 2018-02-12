@@ -32,3 +32,22 @@ function fibonacci(number) {
 } 
 
 fibonacci(20);
+
+// ADDING ELEMENTS TO THE END OF ARRAY
+
+var numbers = [1,2,3,4,5];
+numbers.push(6);
+numbers.push(7,8);
+
+// INSERTING AN ELEMENT IN THE FIRST POSITION
+
+numbers.unshift(-2);
+numbers.unshift(-4, -3);
+
+// REMOVING AN ELEMENT FROM THE END OF ARRAY
+
+mumbers.pop();
+
+// REMOVING AN ELEMENT FROM THE BEGINNING OF ARRAY
+
+numbers.shift();
