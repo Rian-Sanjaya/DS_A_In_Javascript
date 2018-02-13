@@ -51,3 +51,11 @@ mumbers.pop();
 // REMOVING AN ELEMENT FROM THE BEGINNING OF ARRAY
 
 numbers.shift();
+
+// ADDING AND REMOVING ELEMENTS FROM A SPECIFIC POSITION
+
+numbers.splice(5, 3);	// remove 3 elements starting from index 5
+
+numbers.splice(5,0,2,3,4) 	// insert elements starting from index 5
+
+numbers.splice(5,3,2,3,4)	// remove 3 elements and inserting elements starting from index 5
