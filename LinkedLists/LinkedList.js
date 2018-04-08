@@ -10,10 +10,10 @@ function LinkedList() {
 	this.append = function(element) {
 		// {1} crate node item passing element as its value
 		// {2} a variable that points to the current list
-		// {3} if head is null (the list is empty), we are the first element to the list
+		// {3} if head is null (the list is empty), we add the first element to the list
 		// 		if head is not null
 		// 		{4} reference to the first element, we iterate the list to find the last element (current.next is null)
-		//		{5} then, link the current next element  to point to the node we want to add
+		//		{5} then, link the current next element to point to the node we want to add
 		// {6} increment the size of the list
 
 		let node = new Node(element),	// {1}
