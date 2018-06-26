@@ -10,7 +10,6 @@ function cyclicRotation(A, K) {
             }
         }
         A = arr;  // we only assign variable A referencing to the same array object as variable arr
-        // so in the next process if we change arr, it will also change A
         arr = []; // so we need to make variable arr to refer a new array object
     }
     
