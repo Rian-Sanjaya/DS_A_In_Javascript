@@ -1,8 +1,8 @@
 function cyclicRotation(A, K) {
     let arr = [];
     
-    for (let i=0; i<K; i++) {
-        for (let j=0; j<A.length; j++) {
+    for (let i=0; i<K; i++) {   // loop to the no. of K times
+        for (let j=0; j<A.length; j++) {    // loop to the no. of A (array) lenght
             if (j === A.length-1) {
                 arr[0] = A[j];
             } else {
