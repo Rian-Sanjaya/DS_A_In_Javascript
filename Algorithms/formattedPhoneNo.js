@@ -1,4 +1,4 @@
-// format phoe number
+// format phone number
 // 1.
 // "4-2 1 4  5-7 23"
 // "421-457-23"
