@@ -12,8 +12,10 @@
 // "123-453-812-342"
 
 function formattedPhoneNo(phoneNo) {
-    phoneNo = phoneNo.replace(/\s/g, '');
-    phoneNo = phoneNo.replace(/-/g, '');
+    // phoneNo = phoneNo.replace(/\s/g, '');
+    // phoneNo = phoneNo.replace(/-/g, '');
+    phoneNo = phoneNo.split(' ').join('');
+    phoneNo = phoneNo.split('-').join('');
 
     var formattedPhone = '',
         div = 1,
@@ -44,4 +46,11 @@ function formattedPhoneNo(phoneNo) {
     }
 
     return formattedPhone;
+    // console.log(formattedPhone);
 }
+
+formattedPhoneNo("4-2 1 4  5-7 23")
+formattedPhoneNo("34 5 08 31223")
+formattedPhoneNo("123453812342")
+formattedPhoneNo("12345")
+formattedPhoneNo("1234567890123456")

@@ -14,10 +14,10 @@ function telephoneCheck(str) {
     // return r.test(str);
 
     var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
-  
+    
     return regex.test(str);
   }
+
+  telephoneCheck('4-2 1 4  5-7 23')
   
-  
-  
-  telephoneCheck("555-555-5555");
+  // telephoneCheck("555-555-5555");
