@@ -1,6 +1,6 @@
 function isPrime(n) {
     if (n < 2) return false;
-    for (var i=2; i<n; i++) {
+    for (let i=2; i<n; i++) {
         if (n % i === 0) return false;
     }
     return true;
@@ -8,7 +8,7 @@ function isPrime(n) {
 
 function primeList(n) {
     var result = [];
-    for (var i=2; i<=n; i++) {
+    for (let i=2; i<=n; i++) {
       if (isPrime(i))
         result.push(i);
     } 

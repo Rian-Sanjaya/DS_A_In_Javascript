@@ -3,11 +3,11 @@ function allUnique(str) {
     var str = str.toLowerCase().split(' ').join(''); // make all lowercase and remove all space
 
     for (let i=0; i<str.length; i++) {
-        var value = str[i];
+        var char = str[i];
 
         if (chars[char]) return false;
 
-        chars[char] = 1;
+        chars[char] = (chars[char] || 0) + 1;
     }
 
     return true;
