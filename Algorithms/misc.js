@@ -8,11 +8,20 @@ contoh output ->
 0 0 0 0 5
 */
 
-for (var i=1; i<6; i++) {
-  var str = ""
-  for (var j=1; j<6; j++) {
-    if (j<i) str += '0';
-    else str += j;
+function fun(N) {
+
+  for (var i=1; i<N; i++) {
+
+    var str = ""
+
+    for (var j=1; j<N; j++) {
+
+      if (j<i) str += '0';
+      else str += j;
+
+    }
+
+    console.log(str);
   }
-  console.log(str);
+
 }
