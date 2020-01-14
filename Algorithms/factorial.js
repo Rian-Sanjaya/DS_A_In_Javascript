@@ -10,3 +10,18 @@ function factorial(num) {
 
     return num;
 }
+
+function fact(num) {
+    if (num === 0) return 1
+
+    let result = 1
+
+    for (let i = 2; i <= num; i++) {
+        result *= i
+    }
+
+    return result
+}
+
+console.log(factorial(7))
+console.log(fact(7))

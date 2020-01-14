@@ -15,4 +15,4 @@ function primeList(n) {
     return result;
 }
 
-primeList(15)
+console.log(primeList(15))

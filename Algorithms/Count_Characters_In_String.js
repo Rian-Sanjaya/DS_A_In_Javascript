@@ -1,17 +1,15 @@
-function CountChars(str) {
-    var chars = {};
-    var str = str.toLowerCase().split(' ').join('');
-
-    for (let i=0; i<str.length; i++) {
-        var char = str[i];
-
-        chars[char] = chars[char] || 0;
-        chars[char]++;
+const countChars = (str) => {
+    let chars = {}
+  
+    for (let i = 0; i < str.length; i++) {
+      if (str[i].trim() !== '')
+        chars[str[i]] = (chars[str[i]] || 0) + 1
     }
-
-    return chars;
-}
-
-var sentence = 'Aku seorang kapiten';
-var chars = CountChars(sentence);
-console.log(chars);
+  
+    const arr = Object.keys(chars)
+    for (let i = 0; i < arr.length; i++) {
+      console.log(`${arr[i]}: ${chars[arr[i]]}`)
+    } 
+  }
+  
+  console.log(countChars('Aku seorang kapiten'))
