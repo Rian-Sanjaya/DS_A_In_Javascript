@@ -1,26 +1,26 @@
-// FIND FIBONACCI SEQUENCE UP TO MAX NUMBER
+const prime = n => {
+	let result = []
 
-function fibonacciMax(max) {
-	let fibonacci = [],
-		sum, i = 2;
+	if (n >= 2) {
+		if (n === 2) result.push(n)
 
-	if (max > 0) 
-		fibonacci[0] = 0;
+		for (let i = 2; i <= n; i++) {
+			let isPrime = true
 
-	if (max > 1) 
-		fibonacci[1] = 1;
+			for (j = 2; j < i; j++) {
+				if (i % j === 0) {
+					isPrime = false
+					break
+				}
+			}
 
-	while (1) {
-		sum = fibonacci[i-2] + fibonacci[i-1];
-		if (sum <= max) {
-			fibonacci.push(sum);
-		} else {
-			break;
+			if (isPrime) result.push(i)
 		}
-		i++;
 	}
 
-	return fibonacci;
+	return result
 }
 
-console.log(fibonacciMax(20))
+// console.log(prime(1))
+// console.log(prime(2))
+console.log(prime(10))
