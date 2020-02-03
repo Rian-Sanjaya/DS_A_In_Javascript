@@ -153,7 +153,7 @@ var obj = {
 
 var bar = foo.bind( obj );
 
-var b = bar( 3 );  // 2 5
+var b = bar( 3 );  // 2 3
 console.log(b);    // 5
 
 bind(..) returns a new function that is hardcoded to call the original function with the this context set as you specified.
@@ -170,12 +170,17 @@ console.log( bar.a );  // 2
 
 ** What is Functional Programming ?
 
+In Javascript function is value, we can assign it to a variable, we can pass function as function parameter.
+
+
 ** What is Prototypal Inheritance (Diffrence between Class & Prototypal Inheritance) ?
 
 all objects (including functions) has a prototype property (we call it proto), a property that simply a reference to another object.
 
+
 ** Prototype Chain
 
 when we call a property (let say it prop1), it will look prop1 on the object itself, if it cannot find it, it will look on the prototype, if it cannot find it, it will look on the prototype of the prototype, and so on.
+
 
 ** What is Promise ?
