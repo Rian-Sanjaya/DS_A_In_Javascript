@@ -1,26 +1,10 @@
-const prime = n => {
-	let result = []
+const addOne = () => {
+	let num1 = 1
 
-	if (n >= 2) {
-		if (n === 2) result.push(n)
-
-		for (let i = 2; i <= n; i++) {
-			let isPrime = true
-
-			for (j = 2; j < i; j++) {
-				if (i % j === 0) {
-					isPrime = false
-					break
-				}
-			}
-
-			if (isPrime) result.push(i)
-		}
-	}
-
-	return result
+	return num2 => num1 + num2
 }
 
-// console.log(prime(1))
-// console.log(prime(2))
-console.log(prime(10))
+const addToOne = addOne()
+
+console.log(addToOne(3))
+console.log(addToOne(5))
