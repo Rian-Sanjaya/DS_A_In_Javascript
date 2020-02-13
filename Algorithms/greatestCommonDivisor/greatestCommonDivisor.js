@@ -13,4 +13,4 @@ function greatestCommonDivisor1(num1, num2) {
 	return greatestDivisor;
 }
 
-greatestCommonDivisor1(24, 54);
+console.log(greatestCommonDivisor1(24, 54))
