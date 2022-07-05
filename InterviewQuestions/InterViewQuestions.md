@@ -1,9 +1,47 @@
+** Check if object is an array ?
+
+const arr = [1,2,3]
+
+Array.isArray(arr)
+
+arr.constructor.name === 'Array'
+
+arr.constructor === Array
+
+Object.toString.call(arr) === '[object Array]'
+
+
+** Duplicate Array
+
+const arr = [1,2,3]
+
+console.log([...arr, ...arr])
+
+console.log(arr.concat(arr))
+
+
+** What is Callback Function ?
+
+A callback function is a function that is passed to another function as an argument and is executed inside the function.
+
+function addBy(value, callback) {
+  return callback(value)
+}
+
+function addOne(value) {
+  return value + 1
+}
+
+console.log(addBy(2, addOne))
+
+
 ** What is Closure ?
 
 A function that return a function.
 The return inner function have access to the variables in the outer (enclosing) function scope even after the outer function has returned.
 
 Closures are used for data privacy.
+
 
 ** What is hoisting ?
 
