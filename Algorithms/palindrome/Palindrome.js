@@ -5,10 +5,7 @@ const palindrme = (str) => {
     result += str[i]
   }
 
-  if (str.toLowerCase() === result.toLowerCase())
-    return true
-  else 
-    return false
+  return str.toLowerCase() === result.toLowerCase();
 }
 
 console.log(palindrme('kodOk kodoK koDok'))

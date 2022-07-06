@@ -7,3 +7,4 @@ Practice sequence:
 
 2. Count_Characters_in_String.js
 
+3. remove_duplicate.js
