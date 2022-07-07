@@ -71,6 +71,11 @@ function createBase(x) {
 }
 
 
+** Use a closure to create a private Counter
+
+
+
+
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
