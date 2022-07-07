@@ -20,6 +20,31 @@ console.log([...arr, ...arr])
 console.log(arr.concat(arr))
 
 
+** Empty an Array
+
+const arr = [1, 2, 3]
+const arr1 = arr
+
+// #1
+arr = []
+// arr: []
+// arr1: [1, 2, 3]
+
+// #2
+arr.length = 0
+// arr: []
+// arr1: []
+
+
+** Check is a number is an integer
+
+function isInt(num) {
+  return (num % 1) === 0
+}
+
+console.log(isInt(3))
+
+
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
