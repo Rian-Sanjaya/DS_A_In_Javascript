@@ -45,6 +45,32 @@ function isInt(num) {
 console.log(isInt(3))
 
 
+** Write function mul(2)(3)(4) // output: 24
+
+function mul(x) {
+  return function (y) {
+    return function (z) {
+      return x * y * z;
+    }
+  }
+}
+
+console.log(mul(2)(3)(4));
+
+
+** Write a function that would allow you to do this
+
+const addSix = crateBase(6);
+console.log(addSix(10)) // return: 16
+console.log(addSix(21)) // return: 27
+
+function createBase(x) {
+  return function (y) {
+    return y + x;
+  }
+}
+
+
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
@@ -63,9 +89,13 @@ console.log(addBy(2, addOne))
 ** What is Closure ?
 
 A function that return a function.
-The return inner function have access to the variables in the outer (enclosing) function scope even after the outer function has returned.
+The return inner function have access to the variables in the outside function.
 
 Closures are used for data privacy.
+
+ex:
+const addSix = createBase(6)
+console.log(addSix(10)) // return: 16
 
 
 ** What is hoisting ?
