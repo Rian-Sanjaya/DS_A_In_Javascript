@@ -137,6 +137,57 @@ a.incr(3);
 console.log(a.get())
 
 
+** What will be the output
+
+var x = 4
+obj = {
+  x: 3,
+  bar: function () {
+    var x = 2;
+    setTimeout(function() {
+      var x = 1;
+      console.log(this.x);
+    }, 1000)
+  }
+};
+
+obj.bar();
+
+// result: 4
+// when setTimeout is called, the scope of 'this' is global scoped, where x = 4
+
+
+** what will be the output
+
+var a = [
+  { price: 10 },
+  { name: 'Book', price: 15 },
+  { price: 20, id: 123 },
+];
+
+var b = a.reduce((prev, curr) => {
+  return Object.assign(prev, curr);
+}, {})
+
+console.log(b);
+
+// { price: 20, name: 'Book', id: 123 }
+
+
+** What will be the output
+
+var people = ['alex', 'john', 'bill', 'kyle', 'mark', 'cherryl'];
+
+people.concat([]).sort();
+
+console.log(people);
+
+// ['alex', 'john', 'bill', 'kyle', 'mark', 'cherryl']
+
+// people.concat([]) will return a new array, so the sorted array is the new array (not people)
+
+
+
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
