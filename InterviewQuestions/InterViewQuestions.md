@@ -71,9 +71,70 @@ function createBase(x) {
 }
 
 
+** Coercion (implicit convertion) of non-boolean value to a boolean
+
+// means convert a non-boolean to a boolean (truthy and falsy)
+
+falsy value:
+
+'' (empty string)
+0, -0, NaN (invalid number)
+null, undefined
+false
+
+any value that is not on falsy list is truthy:
+
+'hi'
+42
+true
+[], [1, 2, 3] (arrays)
+{}, { a: 2 } (objects)
+function foo { ... } (functions)
+
+
+** What will be the output of the following 
+
+var y = 1;
+if (function f() {}) {
+  y += typeof f;
+}
+console.log(y);
+
+// result: 1undefined
+
+If condition statement evaluate using eval and execute at runtime
+
+The above code is the same as:
+
+var y = 1;
+if (1) {
+  eval(function f() {});
+  y += typeof f;
+}
+console.log(y);
+
+
 ** Use a closure to create a private Counter
 
+function counter() {
+  let _counter = 0;
+  return {
+    incr: (n) => _counter += n,
+    decr: (n) => _counter -= n,
+    get: () => _counter
+  }
+}
 
+const a = counter();
+console.log(a.get())
+a.decr(2);
+console.log(a.get())
+a.incr(2);
+console.log(a.get())
+a.incr(2);
+console.log(a.get())
+a.incr(3);
+console.log(a.get())
 
 
 ** What is Callback Function ?
@@ -99,8 +160,13 @@ The return inner function have access to the variables in the outside function.
 Closures are used for data privacy.
 
 ex:
-const addSix = createBase(6)
-console.log(addSix(10)) // return: 16
+function multiply(x) {
+  return function (y) {
+    return x * y;
+  }
+}
+
+console.log(multiply(5)(6));
 
 
 ** What is hoisting ?
