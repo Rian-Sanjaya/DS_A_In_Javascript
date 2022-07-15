@@ -19,3 +19,7 @@ Practice algorithm sequence:
 5. factorial (recursive)
 
 6. factorial
+
+7. InventoryUpdate.js
+
+8. SymmetricDifference.js

@@ -6,6 +6,9 @@
 // (C △ D = {1, 4} △ {2, 3} = {1, 2, 3, 4}). 
 // The resulting array must contain only unique values (no duplicates).
 
+sym([1, 2, 3, 3], [5, 2, 1, 4]); // should return [3, 4, 5]
+sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]); // should return [1, 4, 5]
+
 function sym() {
     let args = [];
 
@@ -33,6 +36,3 @@ function sym() {
 
     return args.reduce( symDiff )
 }
-
-sym([1, 2, 3, 3], [5, 2, 1, 4]); // should return [3, 4, 5]
-sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]); // should return [1, 4, 5]
