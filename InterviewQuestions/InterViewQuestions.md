@@ -187,13 +187,25 @@ console.log(people);
 // people.concat([]) will return a new array, so the sorted array is the new array (not people)
 
 
+** What will be the output
+
+function factorial(arr) {
+    arr.push('bar')
+    arr = ['foo', 'buz']
+}
+
+const a = ['qu']
+factorial(a)
+console.log(a) // result: ['qu', 'bar']
+
+
 
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
 
 function addBy(value, callback) {
-  return callback(value)
+  callback(value)
 }
 
 function addOne(value) {

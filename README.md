@@ -15,3 +15,7 @@ Practice algorithm sequence:
 3. remove_duplicate.js
 
 4. anagram.js
+
+5. factorial (recursive)
+
+6. factorial
