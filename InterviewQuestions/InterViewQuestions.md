@@ -198,6 +198,34 @@ const a = ['qu']
 factorial(a)
 console.log(a) // result: ['qu', 'bar']
 
+// object pass to function as reference, so when arr.push it also change the object outside function
+// arr = ['foo', 'buz'] is a local variable to  function pointed to another object
+
+
+** What will be the output
+
+matrix = []
+row = [0, 0]
+for (let i = 0; i < 2; i++) {
+    matrix.push(row)
+}
+
+matrix[1][1] = 1
+console.log(matrix) // [[0, 1], [0, 1]]
+
+// The bug here is that "matrix" contains two references to the same object, so a change to one row shows up in both rows. 
+// The programmer likely wanted references to two different objects.
+// The solution here is to append a copy of row to matrix
+
+matrix = []
+row = [0, 0]
+for (let i = 0; i < 2; i++) {
+    matrix.push([...row])
+}
+
+matrix[1][1] = 1
+console.log(matrix)
+
 
 
 ** What is Callback Function ?
