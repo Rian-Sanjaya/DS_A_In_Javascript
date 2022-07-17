@@ -11,7 +11,7 @@ arr.constructor === Array
 Object.toString.call(arr) === '[object Array]'
 
 
-** Duplicate Array
+** Clone/Duplicate Array
 
 const arr = [1,2,3]
 
@@ -43,6 +43,24 @@ function isInt(num) {
 }
 
 console.log(isInt(3))
+
+
+** Check if a string is a valid number
+
+isNaN('123') ? 'true' : 'false'
+
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+
+** Reguler Expresion
+
+// only letters, number and underscore
+/^[A-Za-z0-9_]*$/.test(str)
+
 
 
 ** Write function mul(2)(3)(4) // output: 24
@@ -198,8 +216,8 @@ const a = ['qu']
 factorial(a)
 console.log(a) // result: ['qu', 'bar']
 
-// object pass to function as reference, so when arr.push it also change the object outside function
-// arr = ['foo', 'buz'] is a local variable to  function pointed to another object
+// object pass to function as reference, so when arr.push it also change the object outside the function
+// arr = ['foo', 'buz'] is a local variable to function pointed to another object
 
 
 ** What will be the output
