@@ -56,13 +56,6 @@ function isNumeric(str) {
 }
 
 
-** Reguler Expresion
-
-// only letters, number and underscore
-/^[A-Za-z0-9_]*$/.test(str)
-
-
-
 ** Write function mul(2)(3)(4) // output: 24
 
 function mul(x) {
@@ -229,7 +222,9 @@ for (let i = 0; i < 2; i++) {
 }
 
 matrix[1][1] = 1
-console.log(matrix) // [[0, 1], [0, 1]]
+console.log(matrix) 
+
+// output: [[0, 1], [0, 1]]
 
 // The bug here is that "matrix" contains two references to the same object, so a change to one row shows up in both rows. 
 // The programmer likely wanted references to two different objects.
@@ -244,6 +239,26 @@ for (let i = 0; i < 2; i++) {
 matrix[1][1] = 1
 console.log(matrix)
 
+
+** What will be the output
+
+var Employee = {
+  company: 'xyz'
+}
+
+var emp1 = Object.create(Employee)
+delete emp1.company
+console.log(emp1.company)
+
+// output: 'xyz'
+
+emp1 object got company as prototype property. delete operator doesn't delete prototype property.
+
+emp1 object doesn't have company as its own property. you can test it like:
+
+console.log(emp1.hasOwnProperty('company')) // output: false
+
+However, we can delete company property directly from Employee object using delete Employee.company or we can also delete from emp1 object using __proto__ property: delete emp1.__proto__.company
 
 
 ** What is Callback Function ?
@@ -296,7 +311,7 @@ execute javascript one command at a time
 
 a special variable that reference to object.
 
-this value will be different on how it is used.
+this refers to the parent of the function we're executing, or refers to the object that a function is the method of the object. 
 
 function foo() {
   console.log( this.bar );

@@ -1,28 +1,31 @@
-// 1. sort the list first from lowest to greatest
-// 2. initialize first low and high index
-// 3. loop while low <= hight
-// 4. get the middle index "mid" (Math.floor( (low + high) / 2 ))
-// 4. store the middle element to "guess" variable
-// 5. compare guess with item search, if equal it is found, if guess > item then high = mid - 1, if guess < item then low = mid + 1
+const arrays = [2, 6, 1, 4, 5, 3, 12, 9]
 
-const items = [2, 6, 1, 4, 5, 3, 12, 9]
+function binarySearch(arr, num) {
+  // sort the arr first from lowest to greatest
+  arr.sort((a, b) => a - b)
 
-function binarySearch(list, item) {
-  list.sort((a, b) => a - b)
+  // We'll use three pointers.
+    // One at the start of the array, one at the end and another at the middle.
+  let start = 0
+  let end = arr.length - 1
+  let middle = Math.floor((start + end) / 2)
 
-  let low = 0
-  let high = list.length
-  while (low <= high) {
-    let mid = Math.floor((low + high) / 2)
-    let guess = list[mid]
+  // while we haven't found the number and the start pointer is smaller or equal to the end pointer
+  while (arr[middle] !== num && start <= end) {
+    // If the desired number is smaller than the middle, discard the bigger half of the array
+    if (num < arr[middle]) {
+      end = middle - 1
+      // If the desired number is bigger than the middle, discard the smaller half of the array
+    } else {
+      start = middle + 1
+    }
 
-    if (guess === item) return true
-
-    if (guess > item) high = mid - 1
-    else low = mid + 1
+    // Recalculate the middle value
+    middle = Math.floor((start + end) / 2)
   }
 
-  return null
+  // If we've exited the loop it means we've either found the value or the array can't be devided further
+  return arr[middle] === num ? middle : -1
 }
 
-console.log(binarySearch(items, 12))
+console.log(binarySearch(arrays, 12))

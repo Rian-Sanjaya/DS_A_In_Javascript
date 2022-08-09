@@ -9,7 +9,9 @@ function quickSort(array) {
   if (array.length < 2) return array  // base case, if array lenght is 1 or 0, there is nothing to sort
 
   let pivotIndex = Math.floor(array.length / 2)
+  console.log('pivotIndex: ', pivotIndex)
   let pivot = array[pivotIndex]
+  console.log('pivot: ', pivot)
   let less = []
   let greater = []
 
@@ -20,6 +22,13 @@ function quickSort(array) {
     }
   }
 
+  console.log('less: ', less);
+  console.log('greater: ', greater);
+  console.log('return: ', [
+    ...quickSort(less),
+    pivot,
+    ...quickSort(greater)
+  ])
   return [
     ...quickSort(less),
     pivot,
@@ -29,4 +38,4 @@ function quickSort(array) {
 
 console.log(quickSort([4, 3, 5, 1, 2, 6]))
 
-console.log(quickSort([9, 3, 7, 1, 2, 6, 5]))
+// console.log(quickSort([9, 3, 7, 1, 2, 6, 5]))
