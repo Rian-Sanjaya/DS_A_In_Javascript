@@ -6,29 +6,21 @@
 
 function quickSort(array) {
   
-  if (array.length < 2) return array  // base case, if array lenght is 1 or 0, there is nothing to sort
+  if (array.length < 2) return array  // base case, if array length is 1 or 0, there is nothing to sort
 
   let pivotIndex = Math.floor(array.length / 2)
-  console.log('pivotIndex: ', pivotIndex)
   let pivot = array[pivotIndex]
-  console.log('pivot: ', pivot)
   let less = []
   let greater = []
 
   // for (let i in ...) getting the index of array as string
   for (let i in array) {
+    // i is string, pivotIndex is number
     if (i != pivotIndex) {
       array[i] > pivot ? greater.push(array[i]) : less.push(array[i])
     }
   }
 
-  console.log('less: ', less);
-  console.log('greater: ', greater);
-  console.log('return: ', [
-    ...quickSort(less),
-    pivot,
-    ...quickSort(greater)
-  ])
   return [
     ...quickSort(less),
     pivot,

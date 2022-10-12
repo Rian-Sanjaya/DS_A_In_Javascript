@@ -297,7 +297,7 @@ console.log(multiply(5)(6));
 
 In Javascript we can use a variable even the variable declaration is after it. 
 We can also call a function even the function declaration is after calling the function.
-In other structurul programming language this will be error because we have to declare a varialbe and function whenever we want to use the variable and the function.
+In other structural programming language this will be error because we have to declare a varialbe and function whenever we want to use the variable and the function.
 
 Two step when javascript run:
 1. creation phase
@@ -339,6 +339,29 @@ new foo();       // undefined
 2. obj1.foo() sets this to the obj1 object.
 3. foo.call(obj2) sets this to the obj2 object.
 4. new foo() sets this to a brand new empty object.
+
+
+
+** var vs let vs const **
+
+var
+- scope: global if define outside a function
+- can be re-declared and updated
+- var are hoisted to the top of their scope and initialized with undefined
+
+let
+- scope: block scoped
+- can be updated but not re-declared
+- hoisted but not initialized as undefined
+
+const
+- scoped: block scoped
+- cannot be updated or re-declared
+
+var declarations are globally scoped or function scoped while let and const are block scoped.
+var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+While var and let can be declared without being initialized, const must be initialized during declaration.
 
 
 4 Rules:
