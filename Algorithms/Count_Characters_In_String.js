@@ -9,7 +9,7 @@
 const countStr = str => {
   return str.split('').reduce((prev, curr) => {
     prev[curr] ? prev[curr]++ : prev[curr] = 1;
-    return obj;
+    return prev;
   }, {});
 };
 
