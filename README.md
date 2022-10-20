@@ -23,3 +23,9 @@ Practice algorithm sequence:
 7. InventoryUpdate.js
 
 8. SymmetricDifference.js
+
+9. ObservedPins.js
+
+10. rotateAnArrayMatrix.js
+
+11. starPyramid.js

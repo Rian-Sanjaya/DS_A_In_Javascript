@@ -261,6 +261,37 @@ console.log(emp1.hasOwnProperty('company')) // output: false
 However, we can delete company property directly from Employee object using delete Employee.company or we can also delete from emp1 object using __proto__ property: delete emp1.__proto__.company
 
 
+
+** What will be the output 
+
+const FactoryNumber = {
+  number1: 5,
+  number2: 10,
+  add: () => this.number1 + this.number2,
+  times () {
+    return this.number1 * this.number2
+  }
+}
+
+console.log(FactoryNumber.add());
+
+// using arrow function inside an object, this referring to other object outside FactoryNumber
+// Output: NaN
+
+console.log(FactoryNumber.times()); // 50
+
+// solution
+const FactoryNumber = {
+  number1: 5,
+  number2: 10,
+  add: () => FactoryNumber.number1 + FactoryNumber.number2,
+  times () {
+    return this.number1 * this.number2
+  }
+}
+
+
+
 ** What is Callback Function ?
 
 A callback function is a function that is passed to another function as an argument and is executed inside the function.
@@ -307,6 +338,28 @@ all variable and function declaration will be set in memory first
 execute javascript one command at a time
 
 
+** var vs let vs const **
+
+var
+- scope: global if define outside a function
+- can be re-declared and updated
+- var are hoisted to the top of their scope and initialized with undefined
+
+let
+- scope: block scoped
+- can be updated but not re-declared
+- hoisted but not initialized as undefined
+
+const
+- scoped: block scoped
+- cannot be updated or re-declared
+
+var declarations are globally scoped or function scoped while let and const are block scoped.
+var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+While var and let can be declared without being initialized, const must be initialized during declaration.
+
+
 ** What is this in Javascript ?
 
 a special variable that reference to object.
@@ -339,30 +392,6 @@ new foo();       // undefined
 2. obj1.foo() sets this to the obj1 object.
 3. foo.call(obj2) sets this to the obj2 object.
 4. new foo() sets this to a brand new empty object.
-
-
-
-** var vs let vs const **
-
-var
-- scope: global if define outside a function
-- can be re-declared and updated
-- var are hoisted to the top of their scope and initialized with undefined
-
-let
-- scope: block scoped
-- can be updated but not re-declared
-- hoisted but not initialized as undefined
-
-const
-- scoped: block scoped
-- cannot be updated or re-declared
-
-var declarations are globally scoped or function scoped while let and const are block scoped.
-var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
-They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
-While var and let can be declared without being initialized, const must be initialized during declaration.
-
 
 4 Rules:
 
