@@ -47,7 +47,8 @@ console.log(isInt(3))
 
 ** Check if a string is a valid number
 
-isNaN('123') ? 'true' : 'false'
+isNaN('123') ? 'false' : 'true'  // 'true'
+isNaN('123a') ? 'false' : 'true'  // 'false'
 
 function isNumeric(str) {
   if (typeof str != "string") return false // we only process strings!  
@@ -137,15 +138,32 @@ function counter() {
 }
 
 const a = counter();
-console.log(a.get())
+console.log(a.get())  // 0
 a.decr(2);
-console.log(a.get())
+console.log(a.get())  // -2
 a.incr(2);
-console.log(a.get())
+console.log(a.get())  // 0
 a.incr(2);
-console.log(a.get())
+console.log(a.get())  // 2
 a.incr(3);
-console.log(a.get())
+console.log(a.get())  // 5
+
+
+** What will be the output
+
+const arr = [1,2,3]
+
+var a = 0
+
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(() => {
+    console.log(a + i)
+  }, 1000)
+}
+
+// 3
+// 3
+// 3
 
 
 ** What will be the output
