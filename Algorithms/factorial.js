@@ -1,13 +1,13 @@
 // num = 5
 // 5 * 4 * 3 * 2 * 1
 
-function factto(num) {
+function factorial(num) {
     if (num <= 0) return 1;
 
     return num * factorial(num - 1);
 }
 
-function factorial(num) {
+function factorial2(num) {
     if (num === 0) return 1;
 
     for (let i = num - 1; i > 0; i--) {
